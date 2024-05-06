@@ -24,3 +24,34 @@ table {
             padding: 10px;
             text-align: center;
 }
+
+footer {
+    display: flex;
+    direction: space-evenly;
+}
+
+.footer-box {
+    width: 50px;
+    length: 50px;
+    color: white;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#red {
+    background-color: red;
+}
+
+#violet {
+    background-color: violet;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#silver {
+    background-color: silver;
+}

@@ -1,15 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8" />
     <title>Spa Menu</title>
-    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link th:href="@{styles.css}" rel="stylesheet" />
 </head>
 <body>
-<h1>My Super Fancy Spa</h1>
-<div id = "clientProfile">
-</div>
-<div id = "servicesMenu">
-</div>
+    <h1>Fancy Spa</h1>
+
+    <div id = "clientProfile">
+        <h2>Profile</h2>
+        <p th:text="${name}"></p>
+        <p th:text="${skinType}"></p>
+        <p th:text="${manipedi}"></p>
+    </div>
+
+    <div id = "servicesMenu">
+        <h3>Appropriate Facials</h3>
+        <table>
+            <tr th:each="facial : ${appropriateFacials}">
+                <td th:text="${facial}"></td>
+            </tr>
+        </table>
+
+        <div th:if="${manipedi.equals('manicure') or manipedi.equals('both')}">
+            <th:block th:replace="fragments :: manicureDescription"></th:block>
+        </div>
+
+        <div th:if="${manipedi.equals('pedicure') or manipedi.equals('both')}">
+            <th:block th:replace="fragments :: pedicureDescription"></th:block>
+        </div>
+    </div>
+<footer>
+    <div class="footer-box" id="blue">Blue</div>
+    <div class="footer-box" id="red">Red</div>
+    <div class="footer-box" id="violet">Violet</div>
+    <div class="footer-box" id="orange">Orange</div>
+    <div class="footer-box" id="silver">Silver</div>
+</footer>
 </body>
 </html>
