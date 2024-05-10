@@ -10,24 +10,24 @@
 
     <div id = "clientProfile">
         <h2>Profile</h2>
-        <p th:text="${name}"></p>
-        <p th:text="${skinType}"></p>
-        <p th:text="${manipedi}"></p>
+        <p th:text="${client.getName()}"></p>
+        <p th:text="${client.getSkinType()}"></p>
+        <p th:text="${client.getNailService()}"></p>
     </div>
 
     <div id = "servicesMenu">
         <h3>Appropriate Facials</h3>
         <table>
-            <tr th:each="facial : ${appropriateFacials}">
+            <tr th:each="facial : ${client.getAppropriateFacials()}">
                 <td th:text="${facial}"></td>
             </tr>
         </table>
 
-        <div th:if="${manipedi.equals('manicure') or manipedi.equals('both')}">
+        <div th:if="${client.getNailService().equals('manicure') or client.getNailService().equals('both')}">
             <th:block th:replace="fragments :: manicureDescription"></th:block>
         </div>
 
-        <div th:if="${manipedi.equals('pedicure') or manipedi.equals('both')}">
+        <div th:if="${client.getNailService().equals('pedicure') or client.getNailService().equals('both')}">
             <th:block th:replace="fragments :: pedicureDescription"></th:block>
         </div>
     </div>

@@ -21,7 +21,8 @@ public class UserController {
 	public String processAddUserForm(Model model, @ModelAttribute User user, String verify) {
 
 		if (user.getPassword().equals(verify)) {
-			model.addAttribute("user", user.getUsername());
+//			                            let username = user.getUsername();
+			model.addAttribute("username", user.getUsername());
 			return "user/index";
 		}
 		return "user/add";

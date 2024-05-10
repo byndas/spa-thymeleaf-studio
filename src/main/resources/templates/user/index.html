@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <p>WELCOME</p>
-    <a th:href="/"></a>
+    <p th:text="${'WELCOME ' + username}"></p>
+    <a th:href="@{/}">RETURN TO FORM</a>
 </body>
 </html>

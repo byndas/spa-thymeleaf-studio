@@ -16,10 +16,10 @@ public class SpaDayController {
         return "index";
     }
 
-    @PostMapping("/")
-    public String spaMenu(@RequestParam String skinType, @RequestParam String manipedi, Model model) {
+    @PostMapping("/menu")
+    public String spaMenu(@RequestParam String name, @RequestParam String skinType, @RequestParam String manipedi, Model model) {
 
-        Client newClient = new Client(skinType, manipedi);
+        Client newClient = new Client(name, skinType, manipedi);
         newClient.setAppropriateFacials(skinType);
         model.addAttribute("client" , newClient);
 
