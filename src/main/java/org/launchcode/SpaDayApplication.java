@@ -35,7 +35,7 @@ TODO CREATE:
 	set type="password" for password & verify inputs
 	set type="email" on email input to enable basic client-side validation
   ///////////////////////////////////////////////////////////////////////
-	Processing Form Submission
+	Processing Form Submission:
 		in UserController,
 			create handler method:
 				public String processAddUserForm(

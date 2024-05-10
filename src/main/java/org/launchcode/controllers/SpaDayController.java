@@ -11,12 +11,12 @@ import java.util.ArrayList;
 @Controller
 public class SpaDayController {
 
-    @GetMapping
+    @GetMapping("/")
     public String customerForm () {
         return "index";
     }
 
-    @PostMapping
+    @PostMapping("/")
     public String spaMenu(@RequestParam String skinType, @RequestParam String manipedi, Model model) {
 
         Client newClient = new Client(skinType, manipedi);
